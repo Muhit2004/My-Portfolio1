@@ -24,7 +24,7 @@ export default {
         },
       },
       backgroundImage: {
-        terminal: "url('/assets/terminal.png')",
+        terminal: "url('../public/background1.jpg')",
       },
     },
   },

@@ -9,8 +9,22 @@
 }
 
 body {
-  background-color:black;
+
+  background-image: url("/public/background11.jpg");
   font-family: 'General Sans', sans-serif;
+background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+
+
+
+
+
+
+
+
+
 }
 
 @layer utilities {
