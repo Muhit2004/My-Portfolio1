@@ -33,8 +33,10 @@ grid xl:grid-cols-3
             />
 
             <div>
-              <p className="grid-headtext">Hi, I'm Muhit</p>
-              <p className="grid-subtext">
+              <p className="grid-headtext mt-8 sm:mt-16
+
+">Hi, I'm Muhit</p>
+              <p className="grid-subtext ">
                 Passionate about building with code and learning fullstack web
                 development with the focus of animated 3D Websites and Java
                 while mastering DSA to solve real-world problems.
