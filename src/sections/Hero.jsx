@@ -11,8 +11,9 @@ import { motion as _motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen w-full border-2 border-transparent flex flex-col relative transparent">
-      <div className="max-w-7xl w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3 relative">
+    <section className="min-h-screen w-full border-2 border-transparent flex flex-col relative transparent ">
+      <div className="max-w-7xl w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3 relative z-20
+">
         <p className="sm:text-3xl text-2xl font-medium text-white text-center font-generalsans">
           Hi, I am Muhit<span className="waving-hand">👋</span>
         </p>
@@ -25,14 +26,15 @@ const Hero = () => {
         className="w-full h-full inset-0 absolute 
                 sm:h-[calc(100%-75px)]  
                 md:h-[calc(100%-76px)]          
-                lg:h-[calc(100%-75px)]">
+                lg:h-[calc(100%-100px)]
+">
         <section className="relative mx-auto h-screen w-full">
           <Computer />
 
 
-          <div className="xs:bottom-5 absolute bottom-32 flex w-full items-center justify-center">
+          <div className="xs:bottom-10 absolute bottom-32 flex w-full items-center justify-center">
             <a href="#about">
-              <div className="border-secondary flex h-[64px] w-[30px] items-start justify-center rounded-3xl border-4 p-2">
+              <div className="border-secondary flex h-[64px] w-[30px] items-start justify-center rounded-3xl border-4 border-transparent p-2">
                 <_motion.div
                     animate={{ y: [0, 24, 0] }}
                     transition={{
