@@ -1,8 +1,9 @@
 import Navbar from "./sections/Navbar.jsx";
 import Hero from "./sections/Hero.jsx";
 import About from "./sections/About.jsx";
-import Button from "./Components/Button.jsx";
-import Projects from "./sections/Projects.jsx";
+import Projects from "./sections/Projects.jsx"
+import Clients from "./sections/Clients.jsx"
+import Contact from "./sections/Contact.jsx";
 const App = () => {
   return (
     <main className="max-w-7xl mx-auto">
@@ -12,6 +13,8 @@ const App = () => {
 
       <About />
       <Projects />
+        <Clients/>
+        <Contact/>
     </main>
   );
 };

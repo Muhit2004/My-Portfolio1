@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 * {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth
 }
 
 body {
@@ -16,15 +16,6 @@ background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-
-
-
-
-
-
-
-
-
 }
 
 @layer utilities {
@@ -210,5 +201,9 @@ background-size: cover;
   }
  
 }
+html {
+  scroll-behavior: smooth;
+}
+
 
 

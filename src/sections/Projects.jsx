@@ -92,7 +92,8 @@ const Projects = () => {
 
         <div
           className=" border border-black-300 rounded-lg
-                  shadow-2xl shadow-black-200 bg-black-200 h-96 lg:h-full">
+                  shadow-2xl  h-96 lg:h-full bg-transparent backdrop-filter backdrop-blur-3xl
+                   shadow-sm ">
           <Canvas>
             <ambientLight intensity={Math.PI} />
             <directionalLight position={[10, 10, 5]} intensity={0.5} />
@@ -106,7 +107,7 @@ const Projects = () => {
                     maxPolarAngle={Math.PI / 2}
                     enableZoom={false}
                   />
-                  <DemoComputers />
+                  <DemoComputers texture={currentProject.texture} />
                 </group>
               </Suspense>
             </Center>

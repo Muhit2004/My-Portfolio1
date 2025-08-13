@@ -10,7 +10,16 @@ import { motion as _motion } from "framer-motion";
 
 
 const Hero = () => {
-  return (
+
+    const scrollToAbout = (e) => {
+        e.preventDefault();
+        const aboutSection = document.querySelector('#about');
+        if (aboutSection) {
+            aboutSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    return (
     <section className="min-h-screen w-full border-2 border-transparent flex flex-col relative transparent ">
       <div className="max-w-7xl w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3 relative z-20
 ">
@@ -53,8 +62,8 @@ const Hero = () => {
           className=" bottom-0
       left-0 rignt-0 w-full
         items-center justify-center py-2 m-1 mx-auto">
-          <a href="#content" className="w-fit">
-            <Button
+          <a href="#about" className="w-fit">
+            <Button onClick={scrollToAbout}
               name="Let's work Together"
               isBeam
               containerClass="sm:w-fit w-full sm:min-w-96"
