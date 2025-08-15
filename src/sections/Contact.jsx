@@ -59,13 +59,15 @@ const Contact = () => {
                     style={{
                         backgroundImage: "url('/assets/terminal.png')",
                         backgroundSize: isMobile ? 'cover' : 'contain',
-                        backgroundPosition: 'center'
+                        backgroundPosition: 'center',
+                        borderRadius: isMobile ? '100px' : '0px',
+
                     }}
                 />
                 
                 {/* Mobile background overlay for better readability */}
                 {isMobile && (
-                    <div className="absolute inset-0 w-full h-full bg-black bg-opacity-30" />
+                    <div className="absolute inset-0 w-full h-full " />
                 )}
                 
                 {/* Scrollable container for overflow handling */}
