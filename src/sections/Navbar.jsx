@@ -8,13 +8,35 @@ const Navbar = () => {
     setIsOpen((prevIsOpen) => !prevIsOpen);
   };
 
+  // ADDED: smooth scroll handler to navigate to sections and close the mobile menu.
+  // Reason: Ensure clicking any nav item scrolls smoothly to its target and collapses the sidebar on mobile.
+  const handleNavClick = (e, href) => {
+    // Prevent default jump so we can control smooth scrolling
+    e.preventDefault();
+    if (!href || !href.startsWith('#')) return;
+    const id = href.slice(1);
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Optionally reflect the hash in the URL without an abrupt jump
+      if (history.replaceState) {
+        history.replaceState(null, '', href);
+      } else {
+        window.location.hash = href; // fallback
+      }
+    }
+    // Close the mobile menu after navigation
+    setIsOpen(false);
+  };
+
   const NavItems = ()=>{
     return(
       <>
       <ul className='nav-ul'>
         { navLinks.map(({ id, name, href }) => (
           <li key={id} className="nav-li">
-            <a href={href} className="nav-li_a" onClick={() => {}}>
+            {/* CHANGED: attach smooth scroll click handler */}
+            <a href={href} className="nav-li_a" onClick={(e) => handleNavClick(e, href)}>
             {name}
             </a>
           </li>

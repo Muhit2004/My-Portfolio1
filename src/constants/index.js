@@ -24,21 +24,27 @@ export const navLinks = [
 export const clientReviews = [
   {
     id: 1,
-    name: "Emily Johnson",
-    position: "Marketing Director at GreenLeaf",
-    img: "assets/review1.png",
+    name: "Mohammed Hasan Hakim",
+    position: "Student",
+    img: "assets/spotlight1.png",
     review:
-      "Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
+      "Working with Muhit was a fantastic experience." +
+        " He transformed our outdated website into a modern, " +
+        "user-friendly platform. His attention to detail and " +
+        "commitment to quality are unmatched. Highly recommend " +
+        "him for any web dev projects.",
+    rating: 5,
   },
   {
     id: 2,
-    name: "Mark Rogers",
-    position: "Founder of TechGear Shop",
-    img: "assets/review2.png",
+    name: "More Reviews Will Be Added Soon And Share your thoughts about the website in the contact section",
+    position: "",
+    img: "assets/spotlight1.png",
     review:
-      "Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional! Fantastic work.",
+      "",
+    rating: 0,
   },
-  {
+ /* {
     id: 3,
     name: "John Dohsas",
     position: "Project Manager at UrbanTech ",
@@ -53,7 +59,7 @@ export const clientReviews = [
     img: "assets/review4.png",
     review:
       "Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend backend dev are top-notch.",
-  },
+  },*/
 ];
 
 export const myProjects = [
@@ -290,7 +296,7 @@ export const workExperiences = [
     title:
       "Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.",
     icon: "/assets/framer.svg",
-    animation: "victory",
+    animation: "dying",
   },
   {
     id: 2,
@@ -302,7 +308,7 @@ export const workExperiences = [
     icon: "/assets/figma.svg",
     animation: "clapping",
   },
-  {
+  /*{
     id: 3,
     name: "Notion",
     pos: "Junior Web Developer",
@@ -311,5 +317,5 @@ export const workExperiences = [
       "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
     icon: "/assets/notion.svg",
     animation: "salute",
-  },
+  },*/
 ];

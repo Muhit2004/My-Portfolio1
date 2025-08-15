@@ -201,10 +201,21 @@ background-size: cover;
   }
  
 }
+
 html {
+
+  scroll-behavior: smooth !important;
+
+  smooth-behavior: smooth !important;
+}
+#home {
   scroll-behavior: smooth;
 }
-
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
 
 
 

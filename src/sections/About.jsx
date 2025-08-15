@@ -104,7 +104,8 @@ grid xl:grid-cols-3
                             <p className="grid-subtext">
                                 I'm based in UAE, &nbsp; with remote work available
                             </p>
-                            <Button name="Contact Me" isBeam containerClass="w-full mt-10"/>
+                            <a href="#contact">
+                            <Button id="#contact" name="Contact Me" isBeam containerClass="w-full mt-10"/></a>
                         </div>
                     </div>
                 </div>

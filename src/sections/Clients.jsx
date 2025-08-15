@@ -7,7 +7,8 @@ const Clients = () => {
        <h3 className="head-text">Hear from my Clients</h3>
 
            <div className="client-container">
-               {clientReviews.map(({ id, name, review, img, position }) => (
+
+               {clientReviews.map(({ id, name, review, img, position, rating }) => (
                    <div key={id} className="client-review">
                        <p className="text-white font-light">{review}</p>
                        <div className="client-content">
@@ -20,9 +21,15 @@ const Clients = () => {
                                </div>
                            </div>
                            <div className="flex self-end items-center gap-2">
-                               {Array.from({length:5}).map((_,index) =>(
-                                   <img src="/assets/star.png" alt="star" key={index}
-                                        className="w-5 h-5 " />
+                               {Array.from({length: 5}).map((_, index) => (
+                                   index < rating ? (
+                                       <img
+                                           src="/assets/star.png"
+                                           alt="star"
+                                           key={index}
+                                           className="w-5 h-5"
+                                       />
+                                   ) : null
                                ))}
                            </div>
                        </div>

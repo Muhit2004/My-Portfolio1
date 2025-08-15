@@ -1,20 +1,72 @@
-import {useRef} from 'react'
-import {useFBX, useGLTF} from '@react-three/drei'
-import { useAnimations } from '@react-three/drei'
+import {useRef, useEffect} from 'react'
+import {useFBX, useGLTF, useAnimations} from '@react-three/drei'
 
-import {useEffect} from 'react'
-const Developer = ({animatonName='idle',...props}) => {
-    const group = useRef();
+const Developer = ({animationName = 'idle', ...props}) => {
+    const group = useRef()
     const { nodes, materials } = useGLTF('/models/Developer.glb')
-    const {animations : idleAnimation} = useFBX("/models/animations/idle.fbx");
+    const { animations: idleAnimation } = useFBX('/models/animations/idle2.fbx')
+    const { animations: dyingAnimation } = useFBX('/models/animations/Dying.fbx')
+const { animations: clappingAnimation } = useFBX('/models/animations/clapping.fbx')
 
-    idleAnimation[0].name = "idle";
-    const {actions} = useAnimations([idleAnimation[0]], group);
+    // Ensure track names match the GLB skeleton by removing common Mixamo prefixes
+    if (idleAnimation && idleAnimation[0]) {
+        idleAnimation[0].name = 'idle'
+        idleAnimation[0].tracks.forEach((track) => {
+            // Examples we normalize: 'mixamorigLeftLeg.quaternion', 'mixamorig1:LeftLeg.quaternion', 'Armature|Hips.position'
+            track.name = track.name
+                .replace('mixamorig1:', '')
+                .replace('mixamorig:', '')
+                .replace('mixamorig', '')
+                .replace('Armature|', '')
+        })
+    }
+
+    if(dyingAnimation && dyingAnimation[0]){
+        dyingAnimation[0].name = 'dying'
+        dyingAnimation[0].tracks.forEach((track) => {
+
+            track.name = track.name
+                .replace('mixamorig1:', '')
+                .replace('mixamorig:', '')
+                .replace('mixamorig', '')
+                .replace('Armature|', '')
+        })
+    }
+    if(clappingAnimation && clappingAnimation[0]){
+        clappingAnimation[0].name = 'clapping'
+        clappingAnimation[0].tracks.forEach((track) => {
+            track.name = track.name
+                .replace('mixamorig1:', '')
+                .replace('mixamorig:', '')
+                .replace('mixamorig', '')
+                .replace('Armature|', '')
+        })
+    }
+
+    const { actions } = useAnimations(idleAnimation ? [idleAnimation[0] , dyingAnimation[0], clappingAnimation[0]] : [], group)
 
     useEffect(() => {
-        actions[animatonName].reset().fadeIn(0.5).play();
-        return () => actions[animatonName]?.fadeOut(0.5);
-    }, [animatonName])
+        const action = actions?.[animationName]
+        if (action) {
+            action.reset().fadeIn(0.5).play()
+        }
+        return () => {
+            if (action) action.fadeOut(0.5)
+        }
+        // It is important to include actions in deps so it updates when animations are ready
+    }, [actions, animationName])
+
+    useEffect(() =>{
+
+            if (materials.Wolf3D_Skin) {
+                materials.Wolf3D_Skin.color.set("#D6A888") // Light brown/tan
+            }
+
+            if(materials.Wolf3D_Body){
+                materials.Wolf3D_Body.color.set("#D6A888");
+            }
+
+        })
 
     return (
         <group {...props} dispose={null} ref={group}>
