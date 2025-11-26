@@ -64,7 +64,6 @@ const ComputersCanvas = () => {
           <Computers scale={sizes.deskScale} position={sizes.deskPosition} />
 
           <group>
-            <Target position={sizes.targetPosition} />
             <ReactLogo position={sizes.reactLogoPosition} scale={0.55} />
             <Cube position={sizes.cubePosition} scale={0.6} />
             <Rings position={sizes.ringPosition} />
